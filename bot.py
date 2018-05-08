@@ -38,7 +38,7 @@ async def on_message(message):
     if message.content.startswith('<@437954268004352010>'):
         await client.send_message(message.channel, "Mi prefijo es _***x***_")
 
-        if message.content.startswith(prefix + "achus"):
+    if message.content.startswith(prefix + "achus"):
         response = requests.get("https://cdn.discordapp.com/attachments/442084669433839618/442302673635770368/achus.jpg", stream=True)
         await client.send_file(message.channel, io.BytesIO(response.raw.read()), filename="achus.png")
 
