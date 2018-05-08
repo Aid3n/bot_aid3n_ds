@@ -38,9 +38,9 @@ async def on_message(message):
     if message.content.startswith('<@437954268004352010>'):
         await client.send_message(message.channel, "Mi prefijo es _***x***_")
 
-    if message.content.startswith("salchicha rica"):
-        response = requests.get("https://media.discordapp.net/attachments/435099020378243083/442380382051237888/GUMEHHH.jpg", stream=True)
-        await client.send_file(message.channel, io.BytesIO(response.raw.read()), filename="salchicha.png", content= "Salchichita rica.")
+        if message.content.startswith(prefix + "achus"):
+        response = requests.get("https://cdn.discordapp.com/attachments/442084669433839618/442302673635770368/achus.jpg", stream=True)
+        await client.send_file(message.channel, io.BytesIO(response.raw.read()), filename="achus.png")
 
     if message.content.lower().startswith('ola tio'):
         await client.add_reaction(message, '🇴')
@@ -93,18 +93,6 @@ async def on_message(message):
             await client.send_message(message.channel, 'Sorry Error :C')
         finally:
             pass
-
-    if message.content.startswith(prefix + 'test'):
-        try:
-           
-            userembedx = discord.Embed(
-                title='Comandos:',
-                description=user.name,
-                color=000000
-            )
-            userembedx.set_author(
-                name="Comandos Xmass"
-            )
 
 client.run(TOKEN)
 
