@@ -1,4 +1,3 @@
-heroku run
 
 import discord
 import random
@@ -36,7 +35,10 @@ async def on_message(message):
 
     if message.content.startswith('<@437954268004352010>'):
         await client.send_message(message.channel, "Mi prefijo es _***x***_")
-
+    
+    if message.content.startswith(prefix + "achus"):
+        await client.send_file(message.channel, 'achus.png')
+    
     if message.content.lower().startswith('ola tio'):
         await client.add_reaction(message, '🇴')
         await client.add_reaction(message, '🇱')
@@ -88,11 +90,6 @@ async def on_message(message):
             await client.send_message(message.channel, 'Sorry Error :C')
         finally:
             pass
-
-@client.event
-async def on_message(message):
-        if message.content.startswith(prefix + "achus"):
-        await client.send_file(message.channel, 'achus.jpg')
 
 client.run(TOKEN)
 
