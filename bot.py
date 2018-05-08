@@ -19,26 +19,30 @@ async def on_ready():
     print('---------------')
 
 @client.event
+
 async def on_message(message):
     await client.change_presence(game=discord.Game(name='xhelp'))
 
     prefix = 'x'
 
     if message.content.startswith(prefix + 'help'):
-        await client.send_message(message.channel, "```css\nComandos Xmass\n```\n*xinvite* -> Link para invitarme a tu server.\n*xplatano* -> Invitación al server del plátano.\n*xplay* -> Lista de comandos chorra.")
+        emb = (discord.Embed(description="*xinvite* -> Link para invitarme a tu server.\n*xplatano* -> Invitación al server del plátano.\n*xplay* -> Lista de comandos chorra.", colour=000000))
+        emb.set_author(name="§ Comandos Xmass §",icon_url="https://media.discordapp.net/attachments/440563361114226709/440599722093183005/logo.jpg?width=473&height=473")
+        await client.send_message(message.channel, embed=emb)
 
     if message.content.startswith(prefix + 'invite'):
         await client.send_message(message.channel,"Aquí va un link para invitarme chavales: " + "https://discordapp.com/oauth2/authorize?client_id=437954268004352010&scope=bot&permissions=66186303")
 
+
     if message.content.startswith(prefix + 'platano'):
-        await client.send_message(message.channel, "Una invitacion infinita para el server del platano: " + "https://discord.gg/7Z37tFu")
+        await client.send_message(message.channel, "Una invitacion infinita para el server del plátano: " + "https://discord.gg/7Z37tFu")
 
     if message.content.startswith('<@437954268004352010>'):
         await client.send_message(message.channel, "Mi prefijo es _***x***_")
-    
+
     if message.content.startswith(prefix + "achus"):
-        await client.send_file(message.channel, 'achus.png')
-    
+        await client.send_file(message.channel, 'achus.jpg')
+
     if message.content.lower().startswith('ola tio'):
         await client.add_reaction(message, '🇴')
         await client.add_reaction(message, '🇱')
@@ -90,6 +94,8 @@ async def on_message(message):
             await client.send_message(message.channel, 'Sorry Error :C')
         finally:
             pass
+
+
 
 client.run(TOKEN)
 
