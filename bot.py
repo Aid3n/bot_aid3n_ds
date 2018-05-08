@@ -26,7 +26,7 @@ async def on_message(message):
     prefix = 'x'
 
     if message.content.startswith(prefix + 'help'):
-        emb = (discord.Embed(description="*xinvite* -> Link para invitarme a tu server.\n*xplatano* -> Invitación al server del plátano.\n*xplay* -> Lista de comandos chorra.", colour=000000))
+        emb = (discord.Embed(description="*xinvite* -> Link para invitarme a tu server\n*xplatano* -> Invitación al server del plátano.\n*xplay* -> Lista de comandos chorra.", colour=000000))
         emb.set_author(name="§ Comandos Xmass §",icon_url="https://media.discordapp.net/attachments/440563361114226709/440599722093183005/logo.jpg?width=473&height=473")
         await client.send_message(message.channel, embed=emb)
 
