@@ -91,9 +91,8 @@ async def on_message(message):
 
 @client.event
 async def on_message(message):
-    if message.content.startswith(prefix + "achus"):
-        response = requests.get("https://cdn.discordapp.com/attachments/442084669433839618/442302673635770368/achus.jpg", stream=True)
-        await client.send_file(message.channel, io.BytesIO(response.raw.read()), filename="achus.png", content="Achus")
+        if message.content.startswith(prefix + "achus"):
+        await client.send_file(message.channel, 'achus.jpg')
 
 client.run(TOKEN)
 
