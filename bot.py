@@ -20,7 +20,6 @@ async def on_ready():
     print('---------------')
 
 @client.event
-
 async def on_message(message):
     await client.change_presence(game=discord.Game(name='xhelp'))
 
@@ -37,10 +36,6 @@ async def on_message(message):
 
     if message.content.startswith('<@437954268004352010>'):
         await client.send_message(message.channel, "Mi prefijo es _***x***_")
-
-    if message.content.startswith(prefix + "achus"):
-        response = requests.get("https://cdn.discordapp.com/attachments/442084669433839618/442302673635770368/achus.jpg", stream=True)
-        await client.send_file(message.channel, io.BytesIO(response.raw.read()), filename="achus.png")
 
     if message.content.lower().startswith('ola tio'):
         await client.add_reaction(message, '🇴')
@@ -93,6 +88,12 @@ async def on_message(message):
             await client.send_message(message.channel, 'Sorry Error :C')
         finally:
             pass
+
+@client.event
+async def on_message(message):
+    if message.content.startswith(prefix + "achus"):
+        response = requests.get("https://cdn.discordapp.com/attachments/442084669433839618/442302673635770368/achus.jpg", stream=True)
+        await client.send_file(message.channel, io.BytesIO(response.raw.read()), filename="achus.png", content="Achus")
 
 client.run(TOKEN)
 
