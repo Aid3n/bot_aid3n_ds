@@ -93,6 +93,16 @@ async def on_message(message):
             await client.send_message(message.channel, 'Sorry Error :C')
         finally:
             pass
+        
+      
+    if message.content.startswith("test"):
+        try:
+            userembed = discord.Embed(
+                title='Comandos Xmass',
+                description=user.name,
+                color=000000
+            )
+
 
 client.run(TOKEN)
 
