@@ -94,6 +94,18 @@ async def on_message(message):
         finally:
             pass
 
+    if message.content.startswith(prefix + 'user'):
+        try:
+           
+            userembed = discord.Embed(
+                title='Comandos:',
+                description=user.name,
+                color=000000
+            )
+            userembed.set_author(
+                name="Comandos Xmass"
+            )
+
 client.run(TOKEN)
 
 
