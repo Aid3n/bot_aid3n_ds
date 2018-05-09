@@ -7,7 +7,7 @@ chardet==3.0.4
 discord.py==0.16.12
 idna==2.6
 multidict==4.2.0
-pip==9.0.1
+pip==10.0.1
 pycparser==2.18
 requests==2.18.4
 setuptools==28.8.0
