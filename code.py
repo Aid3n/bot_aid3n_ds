@@ -48,6 +48,13 @@ async def on_message(message):
         await client.add_reaction(message, '🇱')
         await client.add_reaction(message, '🇦')
 
+    if message.content.lower().startswith('gabii':
+        await client.add_reaction(message, '🇬')
+        await client.add_reaction(message, '🇦')
+        await client.add_reaction(message, '🅱️')
+        await client.add_reaction(message, 'ℹ️')
+        await client.add_reaction(message, 'ℹ️')
+    
     if message.content.lower().startswith(prefix + 'flip'):
         choice = random.randint(1, 2)
         if choice == 1:
