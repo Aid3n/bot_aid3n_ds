@@ -1,5 +1,3 @@
-TOKEN = discord.bot.token
-
 import discord
 import random
 import io
