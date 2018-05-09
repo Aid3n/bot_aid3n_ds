@@ -41,7 +41,7 @@ async def on_message(message):
         await client.send_message(message.channel, "Mi prefijo es _***x***_")
 
     if message.content.startswith(prefix + "achus"):
-        await client.send_file(message.channel, 'achus.jpg')
+        await client.send_file(message.channel, 'achus.png')
 
     if message.content.lower().startswith('ola tio'):
         await client.add_reaction(message, '🇴')
